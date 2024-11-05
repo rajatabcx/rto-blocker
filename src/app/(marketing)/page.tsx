@@ -64,10 +64,10 @@ export default function LandingPage() {
   );
 }
 
-function PlatformLogo({ name }: { name: string }) {
-  return (
-    <div className='flex items-center justify-center w-40 h-20 bg-white dark:bg-gray-800 rounded-lg shadow-md'>
-      <span className='text-xl font-semibold'>{name}</span>
-    </div>
-  );
-}
+// function PlatformLogo({ name }: { name: string }) {
+//   return (
+//     <div className='flex items-center justify-center w-40 h-20 bg-white dark:bg-gray-800 rounded-lg shadow-md'>
+//       <span className='text-xl font-semibold'>{name}</span>
+//     </div>
+//   );
+// }
