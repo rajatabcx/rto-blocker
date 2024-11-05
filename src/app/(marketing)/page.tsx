@@ -7,7 +7,7 @@ import { HowItWorks } from '@/components/landing/HowItWorks';
 
 export default function LandingPage() {
   return (
-    <div className='flex flex-col p-4 md:gap-8 md:px-10 md:py-6'>
+    <div className='flex flex-col'>
       {/* <header className='px-4 lg:px-6 h-14 flex items-center'>
         <Link className='flex items-center justify-center' href='#'>
           <ShoppingCart className='h-6 w-6' />

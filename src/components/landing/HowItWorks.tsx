@@ -3,34 +3,35 @@ import HowItWorkCard from './HowItWorkCard';
 
 export const HowItWorks = () => {
   return (
-    <section className='min-h-screen flex justify-center items-center max-w-screen-xl mx-auto'>
-      <div className='relative'>
-        <div className='pointer-events-none absolute inset-0 -top-20 -z-10 mx-auto hidden size-[500px] bg-[radial-gradient(hsl(var(--muted-foreground))_1px,transparent_1px)] opacity-25 [background-size:6px_6px] [mask-image:radial-gradient(circle_at_center,white_250px,transparent_250px)] lg:block'></div>
-        <div className='relative flex justify-between gap-16'>
-          <div className='pointer-events-none absolute inset-0 hidden bg-gradient-to-t from-background via-transparent to-transparent lg:block'></div>
+    <section className='min-h-screen flex justify-center items-center max-w-screen-xl mx-auto py-10'>
+      <div className='relative p-4  md:px-10 md:py-6 text-center'>
+        <div className='pointer-events-none absolute inset-0 -z-10 mx-auto hidden size-[500px] bg-[radial-gradient(hsl(var(--muted-foreground))_1px,transparent_1px)] opacity-25 [background-size:6px_6px] [mask-image:radial-gradient(circle_at_center,white_250px,transparent_250px)] lg:block' />
+        <div className='relative flex justify-between lg:gap-16'>
+          <div className='pointer-events-none absolute inset-0 hidden bg-gradient-to-t from-background via-transparent to-transparent lg:block' />
 
-          <div className='w-full max-w-96 shrink-0 justify-between'>
+          <div className='w-full max-w-96 flex-grow-1 shrink-0 justify-between text-left'>
             <p className='font-mono text-xs text-muted-foreground'>
               What’s the solution?
             </p>
             <h2 className='mb-3 mt-6 text-3xl font-medium lg:text-4xl'>
-              Let Streamline handle the details
+              Streamline Your E-commerce Operations
             </h2>
             <p className='text-sm text-muted-foreground'>
-              Streamline optimizes your workflow from start to finish. It
-              gathers information, generates reports, automates tasks, and
-              delivers results—all in one seamless system.
+              Experience a seamless, end-to-end solution designed to simplify
+              your workflow. From data gathering and report generation to task
+              automation and real-time results, Streamline takes care of every
+              detail so you can focus on growing your business.
             </p>
           </div>
-          <div className='hidden w-full max-w-3xl shrink-0 lg:block'>
+          <div className='hidden shrink-0 lg:block flex-1 h-[450px]'>
             <img
               src='https://images.unsplash.com/photo-1542202024422-83d20d29efff?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
               alt='placeholder'
-              className='max-h-[450px] w-full min-w-[450px] max-w-3xl rounded-lg border object-cover'
+              className='w-full h-full rounded-lg border object-cover'
             />
           </div>
         </div>
-        <div className='relative mt-8 grid md:grid-cols-3'>
+        <div className='relative mt-8 lg:mt-0 grid md:grid-cols-3'>
           {howItWorksData.map((item) => (
             <HowItWorkCard key={item.id} {...item} />
           ))}
