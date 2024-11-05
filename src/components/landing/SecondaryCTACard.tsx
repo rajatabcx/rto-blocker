@@ -1,4 +1,5 @@
-import { Button } from '@/components/ui/button';
+// import { Button } from '@/components/ui/button';
+import { Waitlist } from './Waitlist';
 
 export const Cta = () => {
   return (
@@ -14,10 +15,11 @@ export const Cta = () => {
             setup fees. Cancel anytime.
           </p>
           <div className='mt-11 flex flex-col justify-center gap-2 sm:flex-row'>
-            <Button size='lg'>Get Started</Button>
+            {/* <Button size='lg'>Get Started</Button>
             <Button size='lg' variant='outline'>
               Learn More
-            </Button>
+            </Button> */}
+            <Waitlist />
           </div>
         </div>
       </div>

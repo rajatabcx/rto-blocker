@@ -1,8 +1,9 @@
-import { Bell, PlayCircle } from 'lucide-react';
+import { Bell } from 'lucide-react';
 
 import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
+// import { Button } from '@/components/ui/button';
 import { HeroBackground } from './HeroBackground';
+import { Waitlist } from './Waitlist';
 
 export const Hero = () => {
   return (
@@ -27,17 +28,15 @@ export const Hero = () => {
             e-commerce efficiency across multiple platforms.
           </p>
           <div className='mt-6 flex flex-col gap-4 sm:flex-row lg:mt-10'>
-            <Button size={'lg'} className='w-full md:w-auto'>
-              Get a demo
-            </Button>
-            <Button
+            <Waitlist />
+            {/* <Button
               size={'lg'}
               variant={'outline'}
               className='w-full md:w-auto'
             >
               <PlayCircle className='mr-2 size-4' />
               Watch video
-            </Button>
+            </Button> */}
           </div>
         </div>
       </section>
