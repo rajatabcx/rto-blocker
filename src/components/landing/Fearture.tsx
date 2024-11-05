@@ -2,11 +2,13 @@ import { featureCardsData } from '@/lib/constants';
 
 export const Features = () => {
   return (
-    <section className='w-full max-w-screen-xl mx-auto h-screen flex justify-center items-center'>
+    <section className='w-full max-w-screen-xl mx-auto py-10 flex justify-center items-center'>
       <div>
-        <p className='mb-4 text-xs text-muted-foreground'>Why Us?</p>
+        <p className='mb-4 text-xs text-muted-foreground'>
+          Why Choose Our Platform?
+        </p>
         <h2 className='text-3xl font-medium lg:text-4xl'>
-          A better way to build websites
+          Reduce RTO with Shared Customer Intelligence
         </h2>
         <div className='mt-8 grid gap-6 md:grid-cols-2 lg:mt-20 lg:grid-cols-4'>
           {featureCardsData.map((feature) => (

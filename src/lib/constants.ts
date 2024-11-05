@@ -32,34 +32,34 @@ export const featureCardsData: FeatureCardData[] = [
       'Manage all your e-commerce returns and customer data in one place.',
   },
   {
-    id: 'real-time-analytics',
+    id: 'rto-analytics',
     icon: BarChart,
-    title: 'Real-Time Analytics',
+    title: 'RTO Analytics',
     description:
-      'Track performance metrics and customer insights with live data visualization.',
+      'Monitor your return-to-origin patterns with detailed metrics and insights to help optimize your delivery success rates.',
   },
 ];
 
 export const howItWorksData: FeatureCardData[] = [
   {
-    id: 'maximize-efficiency',
+    id: 'connect-stores',
     icon: Timer,
-    title: 'Maximize efficiency',
+    title: 'Connect Your Stores',
     description:
-      'Skip the manual tasks and complex setups. With Streamline, you can focus on what matters most while the system handles the rest.',
+      'Easily integrate your e-commerce platforms with our dashboard using our simple setup process.',
   },
   {
-    id: 'optimize-resources',
+    id: 'monitor-orders',
     icon: DollarSign,
-    title: 'Optimize resources',
+    title: ' Monitor Orders',
     description:
-      "Don't overspend on unnecessary tools or teams. Keep your operations lean and efficient by automating your workflows with Streamline.",
+      'Our system automatically checks new orders against our database of problematic customers and return histories.',
   },
   {
-    id: 'simplify-operations',
+    id: 'get-notified',
     icon: KeyRound,
-    title: 'Simplify operations',
+    title: 'Get Notified',
     description:
-      'Say goodbye to managing multiple platforms. Streamline takes care of all the heavy lifting, ensuring consistent results with minimal hassle.',
+      'Receive instant notifications via email or in-app alerts when potential issues are detected.',
   },
 ];
