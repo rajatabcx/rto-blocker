@@ -12,7 +12,7 @@ export const Hero = () => {
         <div className='flex-1 z-20'>
           <Badge
             variant='outline'
-            className='mb-4 text-sm font-normal lg:mb-10 lg:py-2 lg:pl-2 lg:pr-5 rounded-full'
+            className='mb-4 text-sm font-normal lg:mb-10 lg:py-2 lg:pl-2 lg:pr-5 rounded-full bg-background'
           >
             <span className='mr-2 flex size-8 shrink-0 items-center justify-center rounded-full bg-accent'>
               <Bell className='size-4 animate-ring' />
