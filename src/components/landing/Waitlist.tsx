@@ -15,10 +15,10 @@ import { TextInput } from '@/components/form/TextInput';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Button } from '@/components/ui/button';
-import { toast } from 'sonner';
 import { addToWaitlist } from '@/app/actions/addToWaitlist';
 import { useState } from 'react';
 import { ArrowRight, Loader } from 'lucide-react';
+import { handleError } from '@/lib/handleError';
 
 const schema = z.object({
   email: z.string().email(),
@@ -39,20 +39,21 @@ export function Waitlist() {
 
   const onSubmit = async (data: z.infer<typeof schema>) => {
     setIsLoading(true);
-    try {
-      await addToWaitlist(data.email, data.name);
-      toast.success('You have been added to the waitlist');
-      setIsOpen(false);
-      form.reset();
-    } catch (err: any) {
-      toast.error(err.message);
-    } finally {
-      setIsLoading(false);
-    }
+    const res = await addToWaitlist(data.email, data.name);
+    handleError(res);
+    setIsLoading(false);
+    setIsOpen(false);
   };
 
   return (
-    <Dialog open={isOpen} onOpenChange={setIsOpen}>
+    <Dialog
+      open={isOpen}
+      onOpenChange={(open) => {
+        if (!isLoading) {
+          setIsOpen(open);
+        }
+      }}
+    >
       <DialogTrigger asChild>
         <Button
           size={'lg'}
@@ -89,7 +90,6 @@ export function Waitlist() {
             <div className='flex justify-end'>
               <Button
                 type='submit'
-                variant='secondary'
                 size='lg'
                 disabled={isLoading}
                 className='flex items-center gap-1'

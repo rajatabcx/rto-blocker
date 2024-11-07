@@ -63,3 +63,9 @@ export const howItWorksData: FeatureCardData[] = [
       'Stay informed with instant email or in-app notifications whenever potential issues are detected.',
   },
 ];
+
+export enum ResponseType {
+  SUCCESS = 'success',
+  ERROR = 'error',
+  INFO = 'info',
+}
