@@ -12,3 +12,8 @@ export type Response = {
   type: ResponseType;
   message: string;
 };
+
+export interface ShopifyAccessTokenResponse {
+  access_token: string;
+  scope: string;
+}

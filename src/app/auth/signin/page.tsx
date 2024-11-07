@@ -18,21 +18,21 @@ import { Form } from '@/components/ui/form';
 import Link from 'next/link';
 import { GoogleIcon } from '@/components/common/GoogleIcon';
 
-const schema = z.object({
+export const signinSchema = z.object({
   email: z.string().email(),
   password: z.string().min(6),
 });
 
 export default function SigninPage() {
   const form = useForm({
-    resolver: zodResolver(schema),
+    resolver: zodResolver(signinSchema),
     defaultValues: {
       email: '',
       password: '',
     },
   });
 
-  const onSubmit = (data: z.infer<typeof schema>) => {
+  const onSubmit = (data: z.infer<typeof signinSchema>) => {
     console.log(data);
   };
 

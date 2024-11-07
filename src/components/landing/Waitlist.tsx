@@ -18,7 +18,7 @@ import { Button } from '@/components/ui/button';
 import { addToWaitlist } from '@/app/actions/addToWaitlist';
 import { useState } from 'react';
 import { ArrowRight, Loader } from 'lucide-react';
-import { handleError } from '@/lib/handleError';
+import { handleResponse } from '@/lib/handleResponse';
 
 const schema = z.object({
   email: z.string().email(),
@@ -40,7 +40,7 @@ export function Waitlist() {
   const onSubmit = async (data: z.infer<typeof schema>) => {
     setIsLoading(true);
     const res = await addToWaitlist(data.email, data.name);
-    handleError(res);
+    handleResponse(res);
     setIsLoading(false);
     setIsOpen(false);
   };

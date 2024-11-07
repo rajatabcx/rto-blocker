@@ -1,6 +1,6 @@
 'use client';
 
-import { UserRound } from 'lucide-react';
+import { Loader, UserRound } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import {
@@ -17,16 +17,22 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { Form } from '@/components/ui/form';
 import Link from 'next/link';
 import { GoogleIcon } from '@/components/common/GoogleIcon';
+import { signup, signupWithGoogle } from '@/app/actions/signup';
+import { handleResponse } from '@/lib/handleResponse';
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
-const schema = z.object({
+export const signupSchema = z.object({
   name: z.string().min(1),
   email: z.string().email(),
   password: z.string().min(6),
 });
 
 export default function SignupPage() {
+  const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
   const form = useForm({
-    resolver: zodResolver(schema),
+    resolver: zodResolver(signupSchema),
     defaultValues: {
       name: '',
       email: '',
@@ -34,8 +40,19 @@ export default function SignupPage() {
     },
   });
 
-  const onSubmit = (data: z.infer<typeof schema>) => {
-    console.log(data);
+  const onSubmit = async (data: z.infer<typeof signupSchema>) => {
+    setIsLoading(true);
+    const res = await signup(data);
+    setIsLoading(false);
+    const response = handleResponse(res);
+    if (response) {
+      router.push('/dashboard');
+    }
+  };
+
+  const handleSignupWithGoogle = async () => {
+    const res = await signupWithGoogle();
+    handleResponse(res);
   };
 
   return (
@@ -81,8 +98,13 @@ export default function SignupPage() {
                         type='password'
                       />
                     </div>
-                    <Button type='submit' className='w-full'>
-                      Create account
+                    <Button
+                      type='submit'
+                      className='w-full'
+                      disabled={isLoading}
+                    >
+                      Create account{' '}
+                      {isLoading && <Loader className='size-4 animate-spin' />}
                     </Button>
                   </div>
                 </form>
@@ -94,11 +116,10 @@ export default function SignupPage() {
               </div>
               <Button
                 type='button'
-                onClick={() => {
-                  console.log('handle google');
-                }}
+                onClick={handleSignupWithGoogle}
                 variant='outline'
                 className='w-full'
+                disabled
               >
                 <GoogleIcon />
                 Sign up with Google
