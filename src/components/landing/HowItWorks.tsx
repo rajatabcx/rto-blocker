@@ -11,16 +11,16 @@ export const HowItWorks = () => {
 
           <div className='w-full max-w-96 flex-grow-1 shrink-0 justify-between text-left'>
             <p className='font-mono text-xs text-muted-foreground'>
-              What’s the solution?
+              How Our RTO Solution Works
             </p>
             <h2 className='mb-3 mt-6 text-3xl font-medium lg:text-4xl'>
               Streamline Your E-commerce Operations
             </h2>
             <p className='text-sm text-muted-foreground'>
-              Experience a seamless, end-to-end solution designed to simplify
-              your workflow. From data gathering and report generation to task
-              automation and real-time results, Streamline takes care of every
-              detail so you can focus on growing your business.
+              Get a complete, end-to-end solution for smoother workflows. From
+              tracking customer behavior to generating insights in real-time,
+              our platform automates key processes so you can focus on growing
+              your business.
             </p>
           </div>
           <div className='hidden shrink-0 lg:block flex-1 h-[450px]'>

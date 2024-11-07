@@ -18,14 +18,17 @@ export const Hero = () => {
             <span className='mr-2 flex size-8 shrink-0 items-center justify-center rounded-full bg-accent'>
               <Bell className='size-4 animate-ring' />
             </span>
-            <p className='truncate whitespace-nowrap'>New feature update</p>
+            <p className='truncate whitespace-nowrap'>
+              Exclusive New RTO Solution
+            </p>
           </Badge>
           <h1 className='mb-6 text-4xl font-bold md:text-5xl lg:text-7xl'>
-            Streamline Your E&#8209;commerce Returns
+            Reduce E&#8209;commerce RTO with Centralized Insights
           </h1>
           <p className='max-w-2xl text-muted-foreground md:text-[2vw] lg:text-xl'>
-            Manage returns, identify problematic customers, and boost your
-            e-commerce efficiency across multiple platforms.
+            Manage returns efficiently, flag high-risk customers, and streamline
+            your e-commerce operations with real-time insights across multiple
+            platforms.
           </p>
           <div className='mt-6 flex flex-col gap-4 sm:flex-row lg:mt-10'>
             <Waitlist />
